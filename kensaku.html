@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>ゴルフ場検索</title>
+
+<style>
+	ul {list-style-type: none}
+
+	nav {border: 7px ridge #e0e0e0;
+		width: 340px;
+		height: 290px}
+
+	.day {margin-left: 10px}
+
+	.scroll {overflow-y: scroll;
+			overflow-x: hidden;
+			width: 100px;
+			height: 100px;
+			background-color: #e0e0e0;
+			border: 1px solid #000000;
+			padding: 5px;
+			line-height: 1px}
+
+	.time {border: 1px solid #000000;
+			width: 300px;
+			clear: both;
+			margin-top: 0;
+			margin-left: 10px;
+			margin-right: 10px;
+			position: relative;
+			bottom: 30px}
+	.time p {border-bottom: 1px solid #000000;
+			margin-top: 3px}
+	.times {float: left;}
+
+
+	.price {border: 1px solid #000000;
+			width: 200px;
+			margin-top: 10px;
+			margin-left: 10px;
+			padding-top: 1px;
+			position: relative;
+			bottom: -24px}
+	.price p {border-bottom: 1px solid #000000;
+			margin-top: 3px}
+	
+	.area {border: 1px solid #000000;
+			width: 111px;
+			height: 140px;
+			line-height: 1px;
+			float: right;
+			margin-right: 10px;
+			position: relative;
+			top: -50px}
+
+	form {margin-left: 50px;
+			margin-top: 10px}
+
+</style>
+</head>
+<body>
+	<header>
+		<ul>
+			<li><a href="golf.html">home</a></li>
+			<li><a href="kensaku.html">ゴルフ場検索</a></li>
+			<li><a href="blog.html">ブログ</a></li>
+		</ul>
+		<img src="greenfees_01.jpg" height="188" width="400" alt="">
+	</header>
+	
+
+	<nav>
+			<section class="day">
+				<p>プレー日<input type="date"></p>
+			</section>
+		
+	<section class="area">
+		<p>エリア</p>
+					<ul class="scroll">
+						<li><input type="checkbox" >沖縄</li>
+						<li><input type="checkbox" >北部</li>
+						<li><input type="checkbox" >中部</li>
+						<li><input type="checkbox" >南部</li>
+						<lI><input type="checkbox" >離島</lI>
+						<li><input type="checkbox" >九州</li>
+						<li><input type="checkbox" >関西</li>
+						<li><input type="checkbox" >関東</li>
+						<li><input type="checkbox" >東北</li>
+						<li><input type="checkbox" >四国</li>
+						<li><input type="checkbox" >北海道</li>
+						<li><input type="checkbox" >海外</li>
+					</ul>
+	</section>
+		<section class="price">
+		<p>料金</p>
+			<select>
+					<option value="1">下限なし</option>
+					<option value="2">5000</option>
+					<option value="3">8000</option>
+					<option value="4">10000</option>
+					<option value="5">12000</option>
+					<option value="6">15000</option>
+					<option value="7">20000</option>
+			</select>
+									~
+			<select>
+					<option value="1">上限なし</option>
+					<option value="2">5000</option>
+					<option value="3">8000</option>
+					<option value="4">10000</option>
+					<option value="5">12000</option>
+					<option value="6">15000</option>
+					<option value="7">20000</option>
+			</select>
+	</section>
+<section class="time">
+	<p>スタート時間</p>
+					<ul>
+						<li class="times"><input type="checkbox" >~6時台</li>
+						<lI class="times"><input type="checkbox" >7時台</lI>
+						<li><input type="checkbox" >8時台</li>
+						<li class="times"><input type="checkbox" >9時台</li>
+						<li class="times"><input type="checkbox" >10時台</li>
+						<li><input type="checkbox" >11時台~</li>
+					</ul></section>
+					<br>
+	
+	</nav>
+		<form>
+			<input type="button" value="検索" style="width:80px;height:40px;">
+		</form>
+</body>
+</html>
