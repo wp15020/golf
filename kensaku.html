@@ -5,24 +5,53 @@
 	<title>ゴルフ場検索</title>
 
 <style>
-	ul {list-style-type: none}
+	header ul{margin: 20px; 
+				padding: 0; 
+				list-style: none;}
+		header li{display: inline; 
+				padding: 0; 
+				margin: 0; 
+				float: left;}
+		header li a{display: block;
+					width: 100px;
+					padding: 3px;
+					margin: 10px 0px 10px 0px;
+					text-decoration: none;
+					border:outset 3px #C2CBBD;
+					background-color: #C2CBBD;
+					text-align: center;
+					color: #000000;
+					font-size: 14px;}
+		header li a:hover{border: inset 3px #95A38D;
+						background-color: #95A38D;}
+		header p {clear: both;}
+
+	ul {list-style-type: none;
+		font-style: oblique}
 
 	nav {border: 7px ridge #e0e0e0;
 		width: 340px;
-		height: 290px}
+		height: 290px;
+		background-color: #f5ded3;}
+	nav p {padding-left: 5px}
 
 	.day {margin-left: 10px}
+	.day p {margin-bottom: 0;
+			border: 1px solid #c0c0c0;
+			width: 25%;
+			background-color: #008000;
+			color: snow}
 
 	.scroll {overflow-y: scroll;
 			overflow-x: hidden;
 			width: 100px;
 			height: 100px;
 			background-color: #e0e0e0;
-			border: 1px solid #000000;
+			border: 1px solid #c0c0c0;
 			padding: 5px;
 			line-height: 1px}
 
-	.time {border: 1px solid #000000;
+	.time {border: 1px solid #c0c0c0;
 			width: 300px;
 			clear: both;
 			margin-top: 0;
@@ -30,29 +59,35 @@
 			margin-right: 10px;
 			position: relative;
 			bottom: 30px}
-	.time p {border-bottom: 1px solid #000000;
-			margin-top: 3px}
+	.time p {border-bottom: 1px solid #c0c0c0;
+			margin-top: 3px;
+			background-color: #008000;
+			color: snow}
 	.times {float: left;}
 
 
-	.price {border: 1px solid #000000;
+	.price {border: 1px solid #c0c0c0;
 			width: 200px;
 			margin-top: 10px;
 			margin-left: 10px;
-			padding-top: 1px;
+		
 			position: relative;
-			bottom: -24px}
-	.price p {border-bottom: 1px solid #000000;
-			margin-top: 3px}
-	
-	.area {border: 1px solid #000000;
+			bottom: -15px}
+	.price p {border-bottom: 1px solid #c0c0c0;
+			margin-top: 3px;
+			background-color: #008000;
+			color: snow}
+
+	.area {border: 1px solid #c0c0c0;
 			width: 111px;
 			height: 140px;
 			line-height: 1px;
 			float: right;
 			margin-right: 10px;
 			position: relative;
-			top: -50px}
+			top: -50px;
+			background-color: #008000;}
+	.area p {color: snow}
 
 	form {margin-left: 50px;
 			margin-top: 10px}
@@ -66,13 +101,13 @@
 			<li><a href="kensaku.html">ゴルフ場検索</a></li>
 			<li><a href="blog.html">ブログ</a></li>
 		</ul>
-		<img src="greenfees_01.jpg" height="188" width="400" alt="">
+		<p><img src="greenfees_01.jpg" height="188" width="400" alt=""></p>
 	</header>
 	
 
 	<nav>
 			<section class="day">
-				<p>プレー日<input type="date"></p>
+				<p>プレー日</p><input type="date">
 			</section>
 		
 	<section class="area">
