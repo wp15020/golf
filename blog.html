@@ -5,15 +5,15 @@
 	<title>占い</title>
 	<style>
 		ul {list-style-type: none;
-			text-decoration: none;}
+			text-decoration: none}
 
-		header ul{margin: 0; 
-				padding: 0; 
-				list-style: none;}
-		header li{display: inline; 
-				padding: 0; 
-				margin: 0; 
-				float: left;}
+		header ul{margin: 0;
+				padding: 0;
+				list-style: none}
+		header li{display: inline;
+				padding: 0;
+				margin: 0;
+				float: left}
 		header li a{display: block;
 					width: 100px;
 					padding: 3px;
@@ -23,13 +23,132 @@
 					background-color: #C2CBBD;
 					text-align: center;
 					color: #000000;
-					font-size: 14px;}
+					font-size: 14px}
 		header li a:hover{border: inset 3px #95A38D;
-						background-color: #95A38D;}
+						background-color: #95A38D}
 		header p {clear: both;
-					float: left;}
+					float: left}
+		article {background-image: url(5.jpg);
+				background-repeat: no-repeat;
+				background-position: 500px 0}
 
-		
+	input {display: none}
+	#btn {overflow: hidden;
+		position: relative;
+		right: 70px;
+		width: 200px;
+		height: 60px;
+		margin: 50px auto 0;
+		background-color: #00cfcf;
+		box-shadow: 0 0 3px rgba(0,0,0,.2);
+		border: 1px solid #bbb;
+		border-radius: 5px;
+		line-height: 60px;
+		text-align: center;
+		font-size: 30px;
+		color: #999;
+		text-shadow: 0 1px 0 #fff;
+		cursor: pointer}
+	#btn::before {content: "運試し";
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%}
+	#btn > label {display: block;
+				width: 100%;
+				height: 100%;
+				position: relative;
+				left: 150%}
+	#swtich-start:checked ~ #btn {
+			background: -webkit-linear-gradient(top, #eee, #ccc);
+			background: -moz-linear-gradient(top, #eee, #ccc);
+			background: linear-gradient(to bottom, #eee, #ccc);
+			color: #333}
+	#swtich-start:checked ~ #btn:active {
+			background: -webkit-linear-gradient(top, #ddd, #eee);
+			background: -moz-linear-gradient(top, #ddd, #eee);
+			background: linear-gradient(to bottom, #ddd, #eee);
+			box-shadow: 0 0 1px reba(0,0,0,0.2)}
+	#swtich-start:checked ~ #btn > label {left: 0%;
+			animation: randombtn 2s steps(7, end) 0s infinite;
+			-webkit-animation: randombtn 2s steps(7, end) 0s infinite}
+	#swtich-start:checked ~ #btn:active > label
+			{animation-play-state: pashed;
+			-webkit-animation-play-state: pashed}
+	@keyframes randombtn
+		{from { top: 0%; } to { top: -700%; }}
+	@-webkit-keyframes randombtn
+		{from { top: 0%; } to { top: -700%; }}
+	#hole {position: relative;
+			right: 60px;
+			overflow: hidden;
+			margin: 240px auto 0;
+			width: 250px;
+			height: 240px}
+	#hole:before {content: "";
+				display: block;
+				height: 8px;
+				border-radius: 4px;
+				background-color: #000}
+	#hole:after {content: "";
+				display: block;
+				position: absolute;
+				left: 5px;
+				top: 0;
+				width: 290px;
+				height: 7px;
+		background: -webkit-linear-gradient(top, rgba(0,0,0,1), rgba(0,0,0,0));
+		background: -moz-linear-gradient(top, rgba(0,0,0,1), rgba(0,0,0,0));
+		background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));}
+	[id^=paper]{position: absolute;
+				left: 5px;
+				top: 4px;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+				padding: 15px;
+				width: 240px;
+				background-color: #fff;
+				box-shadow: 0 3px 6px rgba(0,0,0,5);
+				text-align: center;
+				color: #000;
+
+				-webkit-transition: .5s ease-in;
+				-o-transition: .5s ease-in;
+				transition: .5s ease-in;
+
+				-webkit-transform: translateY(-110%);
+				-ms-transform: translateY(-110%);
+				-o-transform: translateY(-110%);
+				transform: translateY(-110%);}
+
+	[id^=paper] h1 {font-size: 24px;}
+	[id^=paper] dl {margin-top: 10px;}
+	[id^=paper] p {margin-top: 10px;}
+	[id^=paper] label {display: inline-block;
+					padding: 3px 10px;
+					font-size: 11px;
+					border-radius: 2px;
+					background-color: #ddd;
+					color: #fff;
+					color: pointer;}
+	#swtich-daikiti:checked ~ #hole #paper-daikiti,
+	#swtich-tyuukiti:checked ~ #hole #paper-tyuukiti,
+	#swtich-syoukiti:checked ~ #hole #paper-syoukiti,
+	#swtich-kiti:checked ~ #hole #paper-kiti,
+	#swtich-suekiti:checked ~ #hole #paper-suekiti,
+	#swtich-kyou:checked ~ #hole #paper-kyou,
+	#swtich-daikyou:checked ~ #hole #paper-daikyou
+		{-webkit-transition: 2s linear;
+			-o-transition: 2s linear;
+				transition: 2s linear;
+		-webkit-transform: translateY(0%);
+			-ms-transform: translateY(0%);
+				-o-transform: translateY(0%);
+					transform: translateY(0%);}
+
 
 	</style>
 </head>
@@ -38,13 +157,77 @@
 		<ul>
 			<li><a href="golf.html">home</a></li>
 			<li><a href="kensaku.html">ゴルフ場検索</a></li>
-			<li><a href="blog.html">おみくじ</a></li>
+			<li><a href="blog.html">運試し</a></li>
 		</ul>
 		<p><img src="images.jpg" height="201" width="302" alt=""></p>
+		<p><img src="2014-05-30-5_5-thumb.jpg" alt=""></p>
 	</header>
-
-
+<article>
 	
+		<input type="radio" name="swtich" id="swtich-start" checked>
+		<input type="radio" name="swtich" id="swtich-daikiti">
+		<input type="radio" name="swtich" id="swtich-tyuukiti">
+		<input type="radio" name="swtich" id="swtich-syoukiti">
+		<input type="radio" name="swtich" id="swtich-kiti">
+		<input type="radio" name="swtich" id="swtich-suekiti">
+		<input type="radio" name="swtich" id="swtich-kyou">
+		<input type="radio" name="swtich" id="swtich-daikyou">
+	
+		<div id="btn">
+			<label for="swtich-daikiti"></label>
+			<label for="swtich-tyuukiti"></label>
+			<label for="swtich-syoukiti"></label>
+			<label for="swtich-kiti"></label>
+			<label for="swtich-suekiti"></label>
+			<label for="swtich-kyou"></label>
+			<label for="swtich-daikyou"></label>
+		</div>
+	
+		<div id="hole">
+			<div id="paper-daikiti">
+				<h1>大吉</h1>
+					<dt>今日のラッキータグ</dt>
+					<dd>text-align</dd>
+				<p><label for="swtich-start">あと１回</label></p>
+			</div>
+			<div id="paper-tyuukiti">
+				<h1>中吉</h1>
+					<dt>今日のラッキータグ</dt>
+					<dd>float: left</dd>
+				<p><label for="swtich-start">あと１回</label></p>
+			</div>
+			<div id="paper-syoukiti">
+				<h1>小吉</h1>
+					<dt>今日のラッキータグ</dt>
+					<dd>display: inline</dd>
+				<p><label for="swtich-start">あと１回</label></p>
+			</div>
+			<div id="paper-kiti">
+				<h1>吉</h1>
+					<dt>今日のラッキータグ</dt>
+					<dd>clear: both</dd>
+				<p><label for="swtich-start">あと１回</label></p>
+			</div>
+			<div id="paper-suekiti">
+				<h1>末吉</h1>
+					<dt>今日のラッキータグ</dt>
+					<dd>padding-left</dd>
+				<p><label for="swtich-start">あと１回</label></p>
+			</div>
+			<div id="paper-kyou">
+				<h1>凶</h1>
+					<dt>今日のラッキータグ</dt>
+					<dd>border</dd>
+				<p><label for="swtich-start">あと１回</label></p>
+			</div>
+			<div id="paper-daikyou">
+				<h1>大凶</h1>
+					<dt>今日のラッキータグ</dt>
+					<dd>width</dd>
+				<p><label for="swtich-start">あと１回</label></p>
+			</div>
+		</div>
+</article>
 </body>
 </html>
 
