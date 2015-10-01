@@ -5,26 +5,32 @@
 	<title>ゴルフ場検索</title>
 
 <style>
-	header ul{margin: 20px; 
-				padding: 0; 
-				list-style: none;}
-		header li{display: inline; 
-				padding: 0; 
-				margin: 0; 
-				float: left;}
-		header li a{display: block;
-					width: 100px;
-					padding: 3px;
-					margin: 10px 0px 10px 0px;
+	body {width: 900px;
+				margin-right: auto;
+				margin-left: auto;
+				font-family: arial}
+	.table {display: table;
+				font-family: arial;
+				font-size: 20px;
+				width: 400px;
+				height: 30px;
+				text-align: center}
+		.table li {display: table-cell;
+					border: inset 2px #c0c0c0;
+					background-color: green;
+					border: 1px solid darkgreen}
+		.table li a {color: snow;
 					text-decoration: none;
-					border:outset 3px #C2CBBD;
-					background-color: #C2CBBD;
-					text-align: center;
-					color: #000000;
-					font-size: 14px;}
-		header li a:hover{border: inset 3px #95A38D;
-						background-color: #95A38D;}
+					display: block;
+					height: 20px;
+					width: 130px;
+					padding: 3px}
+		.table li a:hover {background-color: limegreen;
+							box-shadow: 2px 2px 5px 0 rgba(10,10,10,0.5) inset}
+
 		header p {clear: both;}
+		.image {position: relative;
+				left: 10px}
 
 	ul {list-style-type: none;
 		font-style: oblique}
@@ -97,13 +103,13 @@
 </head>
 <body>
 	<header>
-		<ul>
+		<ul class="table">
 			<li><a href="index.html">top</a></li>
 			<li><a href="golf.html">home</a></li>
 			<li><a href="kensaku.html">ゴルフ場検索</a></li>
 			<li><a href="blog.html">運試し</a></li>
 		</ul>
-		<p><img src="greenfees_01.jpg" height="188" width="400" alt=""></p>
+		<p class="image"><img src="greenfees_01.jpg" height="188" width="400" alt=""></p>
 	</header>
 	
 
