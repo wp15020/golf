@@ -90,7 +90,7 @@
 		article section h2:after {content: ">";
 									position: absolute;
 									left: 250px;
-									bottom: 114px;
+									bottom: 88px;
 									font-size: 30px;
 									color: #ffd700}
 		.image {position: relative;
@@ -112,7 +112,7 @@
 		.corse:after {content: "";
 						position: absolute;
 						left: 240px;
-						bottom: -20px;
+						bottom: -44px;
 						border-width: 14px;
 						border-style: solid;
 						border-color: transparent;
@@ -124,6 +124,19 @@
 				background-color: skyblue;}
 		body > #page {text-align: right}
 
+/*===== スマートフォン用の設定=====*/
+	@media only screen and (max-width: 599px) {
+		body {width: 100%;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box}
+		footer {width: 100%;
+				height: auto}
+		ul {font-size: 7px}
+		ul a {width: auto
+				display: inline-block;}
+		.help {}
+		}
 	</style>
 
 </head>
