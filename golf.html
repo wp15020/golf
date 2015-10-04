@@ -4,24 +4,38 @@
 	<meta charset="UTF-8">
 	<title>ゴルフ場検索</title>
 	<style>
+		body {width: 900px;
+				margin-right: auto;
+				margin-left: auto;
+				font-family: impact}
+
+		ul {list-style-type: none;
+			position: relative;
+			right: 25px}
 		
-		ul {list-style-type: none}
-		header li{display: inline; 
-				padding: 0; 
-				margin: 0; 
-				float: left;}
-		header li a{display: block;
-					width: 100px;
-					padding: 3px;
-					margin: 10px 0px 10px 0px;
+		.table {display: table;
+				font-family: fantasy;
+				font-size: 20px;
+				width: 400px;
+				height: 30px;
+				text-align: center}
+		.table li {display: table-cell;
+					border: inset 2px #c0c0c0;
+					background-color: green;
+					border: 1px solid darkgreen}
+		.table li a {color: snow;
 					text-decoration: none;
-					border:outset 3px #C2CBBD;
-					background-color: #C2CBBD;
-					text-align: center;
-					color: #000000;
-					font-size: 14px;}
-		header li a:hover{border: inset 3px #95A38D;
-						background-color: #95A38D;}
+					display: block;
+					height: 20px;
+					width: 130px;
+					padding: 3px}
+		.tables {vertical-align: bottom;
+				margin-left: 30px}
+		.help {position: absolute;
+					right: 390px;
+					top: 14px}
+		.table li a:hover {background-color: limegreen;
+							box-shadow: 2px 2px 5px 0 rgba(10,10,10,0.5) inset}
 		header p {clear: both;}
 		header {float: left;}
 
@@ -30,8 +44,70 @@
 		width: 340px;
 		height: 290px}
 
-		.maps {position: relative;
-				top: 100px}
+		#stage {position: relative;
+				max-width: 70%;
+				margin-left: 0;
+				overflow: hidden;
+				clear: both}
+		.pic img {position: absolute;
+					width: 100%;
+					top: 0;
+					left: 100%;
+					-webkit-animation: imgtrans 30s infinite;
+					-o-animation: imgtrans 30s infinite;
+					animation: imgtrans 30s infinite}
+		#photo1 img {-webkit-animation-delay: 0s;
+					-o-animation-delay: 0s;
+					animation-delay: 0s}
+		#photo2 img {-webkit-animation-delay: 6s;
+					-o-animation-delay: 6s;
+					animation-delay: 6s}
+		#photo3 img {-webkit-animation-delay: 12s;
+					-o-animation-delay: 12s;
+					animation-delay: 12s}
+		#photo4 img {-webkit-animation-delay: 18s;
+					-o-animation-delay: 18s;
+					animation-delay: 18s}
+		#photo5 img {-webkit-animation-delay: 24s;
+					-o-animation-delay: 24s;
+					animation-delay: 24s}
+		#photo6 img {-webkit-animation-delay: 30s;
+					-o-animation-delay: 30s;
+					animation-delay: 30s}
+		@-webkit-keyframes imgtrans {
+			0% { left: 100%; }
+			5% { left: 0%; }
+			20% { left: 0%; }
+			25% { left: -100%; }
+			100% { left: -100%; }}
+		@-moz-keyframes imgtrans {
+			0% { left: 100%; }
+			5% { left: 0%; }
+			20% { left: 0%; }
+			25% { left: -100%; }
+			100% { left: -100%; }}
+		@keyframes imgtrans {
+			0% { left: 100%; }
+			5% { left: 0%; }
+			20% { left: 0%; }
+			25% { left: -100%; }
+			100% { left: -100%; }}
+		.main {border: 3px ridge #000;
+				width: 100%;
+				height: 1090px;
+				text-align: center;
+				padding-left: 5px;
+				background-image: url(images/basebool.jpg)}
+		.box1 {border: 1px solid #000;
+				width: 48%;
+				height: 350px;
+				float: left;
+				margin: 5px 5px 5px 5px;
+				background-color: #fff;
+				opacity: 1.0;
+				filter: alpha(opacity=100);}
+		.box1 .img {text-align: center}
+		.box1 p {text-align: left;}
 
 	</style>
 </head>
@@ -43,10 +119,65 @@
 			<li><a href="kensaku.html">ゴルフ場検索</a></li>
 			<li><a href="blog.html">運試し</a></li>
 		</ul>
-		<p><img src="woman.jpg" height="450" width="329" alt=""></p>
-		<p><img src="cuppul.jpg" height="556" width="466" alt=""></p>
+		<p class="help"><a href="http://gora.golf.rakuten.co.jp/">困った時はこちら！！</a></p>
 	</header>
-		<p class="maps"><img src="mapb.gif" height="880" width="770" alt=""></p>
-		
+		<div id="stage">
+			<div id="photo1" class="pic"><img src="images/home1.jpg" height="200" width="300" alt=""></div>
+			<div id="photo2" class="pic"><img src="images/home2.jpg" height="200" width="300" alt=""></div>
+			<div id="photo3" class="pic"><img src="images/home3.jpg" height="200" width="300" alt=""></div>
+			<div id="photo4" class="pic"><img src="images/home4.jpg" height="200" width="300" alt=""></div>
+			<div id="photo5" class="pic"><img src="images/home5.jpg" height="200" width="300" alt=""></div>
+			<div id="photo6" class="pic"><img src="images/home6.jpg" height="200" width="300" alt=""></div>
+			<div style="padding:28%;background:transparent;"></div>
+		</div>
+
+		<h2>おすすめゴルフ場（沖縄）</h2>
+<div class="main">
+	<div class="box">
+		<div class="box1">
+				<p class="img"><img src="images/beru.jpg" height="200" width="400" alt=""></p>
+			
+				<h3>ベルビーチゴルフクラブ</h3>
+				<p>1番ホール～18番ホールまですべてのホールがオーシャンビューと最高のロケーションが最大の魅力です。<br>料金も低価格で,特に火曜日にはヒミツも・・・！</p>
+			
+		</div>
+		<div class="box1">
+				<p class="img"><img src="images/arasiyama.jpg" height="200" width="400" alt=""></p>
+			
+				<h3>オリオン嵐山ゴルフ倶楽部</h3>
+				<p>1番ホール～18番ホールまですべてのホールがオーシャンビューと最高のロケーションが最大の魅力です。<br>料金も低価格で,特に火曜日にはヒミツも・・・！</p>
+			
+		</div>
+		<div class="box1">
+				<p class="img"><img src="images/ginoza.jpg" height="200" width="400" alt=""></p>
+			
+				<h3>宜野座カントリークラブ</h3>
+				<p>1番ホール～18番ホールまですべてのホールがオーシャンビューと最高のロケーションが最大の魅力です。<br>料金も低価格で,特に火曜日にはヒミツも・・・！</p>
+			
+		</div>
+		<div class="box1">
+				<p class="img"><img src="images/kise.jpg" height="200" width="400" alt=""></p>
+
+				<h3>喜瀬カントリークラブ</h3>
+				<p>1番ホール～18番ホールまですべてのホールがオーシャンビューと最高のロケーションが最大の魅力です。<br>料金も低価格で,特に火曜日にはヒミツも・・・！</p>
+			
+		</div>
+		<div class="box1">
+				<p class="img"><img src="images/ohtyado.jpg" height="200" width="400" alt=""></p>
+			
+				<h3>美らオーチャードゴルフ倶楽部</h3>
+				<p>1番ホール～18番ホールまですべてのホールがオーシャンビューと最高のロケーションが最大の魅力です。<br>料金も低価格で,特に火曜日にはヒミツも・・・！</p>
+			
+		</div>
+		<div class="box1">
+				<p class="img"><img src="images/parm.jpg" height="200" width="400" alt=""></p>
+			
+				<h3>パームヒルズゴルフリゾートクラブ</h3>
+				<p>1番ホール～18番ホールまですべてのホールがオーシャンビューと最高のロケーションが最大の魅力です。<br>料金も低価格で,特に火曜日にはヒミツも・・・！</p>
+			
+		</div>
+	</div>
+</div>
+
 </body>
 </html>
