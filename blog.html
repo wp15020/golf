@@ -4,49 +4,60 @@
 	<meta charset="UTF-8">
 	<title>占い</title>
 	<style>
-		ul {list-style-type: none;
-			text-decoration: none}
-
-		header ul{margin: 0;
-				padding: 0;
-				list-style: none}
-		header li{display: inline;
-				padding: 0;
-				margin: 0;
-				float: left}
-		header li a{display: block;
-					width: 100px;
-					padding: 3px;
-					margin: 10px 0px 10px 0px;
+		body {width: 900px;
+				margin-right: auto;
+				margin-left: auto;
+				font-family: impact}
+		ul {position: relative;
+			right: 25px}
+		.table {display: table;
+				font-family: fantasy;
+				font-size: 20px;
+				width: 400px;
+				height: 30px;
+				text-align: center}
+		.table li {display: table-cell;
+					border: inset 2px #c0c0c0;
+					background-color: green;
+					border: 1px solid darkgreen}
+		.table li a {color: snow;
 					text-decoration: none;
-					border:outset 3px #C2CBBD;
-					background-color: #C2CBBD;
-					text-align: center;
-					color: #000000;
-					font-size: 14px}
-		header li a:hover{border: inset 3px #95A38D;
-						background-color: #95A38D}
+					display: block;
+					height: 20px;
+					width: 130px;
+					padding: 3px}
+		.tables {vertical-align: bottom;
+				margin-left: 30px}
+		.clubhouse {clear: both;
+					margin-top: 0}
+		.help {position: absolute;
+					right: 390px;
+					top: 14px}
+		.table li a:hover {background-color: limegreen;
+							box-shadow: 2px 2px 5px 0 rgba(10,10,10,0.5) inset}
+
 		header p {clear: both;
 					float: left}
-		article {background-image: url(5.jpg);
+		article {background-image: url(images/5.jpg);
 				background-repeat: no-repeat;
-				background-position: 500px 0}
+				background-position: 100px 50px}
 
 	input {display: none}
 	#btn {overflow: hidden;
 		position: relative;
-		right: 120px;
+		top: -10px;
+		right: 80px;
 		width: 200px;
 		height: 60px;
 		margin: 50px auto 0;
-		background-color: #00ccff;
-		box-shadow: 0 0 3px rgba(0,0,0,.2);
+		background-color: #cc0000;
+		box-shadow: 0 0 3px rgba(0,0,0,0.2);
 		border: 1px solid #bbb;
 		border-radius: 5px;
 		line-height: 60px;
 		text-align: center;
 		font-size: 30px;
-		color: #999;
+		color: #000;
 		text-shadow: 0 1px 0 #fff;
 		cursor: pointer}
 	#btn::before {content: "運試し";
@@ -82,7 +93,8 @@
 	@-webkit-keyframes randombtn
 		{from { top: 0%; } to { top: -700%; }}
 	#hole {position: relative;
-			right:65px;
+			top: 15px;
+			right: 75px;
 			overflow: hidden;
 			margin: 240px auto 0;
 			width: 250px;
@@ -129,9 +141,9 @@
 	[id^=paper] p {margin-top: 10px;}
 	[id^=paper] label {display: inline-block;
 					padding: 3px 10px;
-					font-size: 11px;
+					font-size: 15px;
 					border-radius: 2px;
-					background-color: #ddd;
+					background-color: #c0c0c0;
 					color: #fff;
 					color: pointer;}
 	#swtich-daikiti:checked ~ #hole #paper-daikiti,
@@ -154,15 +166,16 @@
 </head>
 <body>
 	<header>
-		<ul>
-			<li><a href="index.html">top</a></li>
-			<li><a href="golf.html">home</a></li>
-			<li><a href="kensaku.html">ゴルフ場検索</a></li>
-			<li><a href="blog.html">運試し</a></li>
-		</ul>
-		<p><img src="images.jpg" height="201" width="302" alt=""></p>
-		<p><img src="2014-05-30-5_5-thumb.jpg" alt=""></p>
+			
+				<ul class="table">
+					<li><a href="index.html">top</a></li>
+					<li><a href="golf.html">home</a></li>
+					<li><a href="kensaku.html">ゴルフ場検索</a></li>
+					<li><a href="blog.html">運試し</a></li>
+				</ul>
+		<p class="help"><a href="http://gora.golf.rakuten.co.jp/">困った時はこちら！！</a></p>
 	</header>
+
 <article>
 	
 		<input type="radio" name="swtich" id="swtich-start" checked>
