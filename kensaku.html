@@ -49,18 +49,17 @@
 		font-style: oblique}
 
 	nav {border: 7px ridge #e0e0e0;
-		width: 440px;
+		width: 390px;
 		height: 360px;
 		background-color: #f5ded3;
 		font-family: arial;}
-	nav p {padding-left: 5px}
 
-	.day {margin-left: 10px}
+	.day {margin-left: 0px}
 	.day p {margin-bottom: 0;
 			border: 1px solid #c0c0c0;
-			width: 25%;
+			width: 36.5%;
 			background-color: #008000;
-			color: snow}
+			color: snow;}
 
 	.scroll {overflow-y: scroll;
 			overflow-x: hidden;
@@ -111,27 +110,30 @@
 			background-color: #008000;}
 	.area p {color: snow}
 
-	form {margin-left: 50px;
+	form {margin-left: 20px;
 			margin-top: 10px}
-	table {border: 3px ridge #000;
-			background-color: #c0c0c0;
-			width: 50%}
-	table td {border-bottom:  3px solid #000;}
+
+	table {border: 7px ridge #c0c0c0;
+			background-color: #f5ded3;
+			width: 63%}
+	table td {border-bottom:  3px solid #c0c0c0;}
 	table td span {font-size: 18px;
 					font-family: inpact;
 					padding: 0 7px 0 7px}
-	nav p {text-align: right}
+	.bb {text-align: right;
+		margin-right: 20px;
+		position: relative;
+		bottom: 20px}
 
 	footer {border-top: 5px double #000000;
 				border-bottom: 5px double #000000;
 				text-align: center;
 				font-size: 15px;
-				background-color: skyblue;
-				margin-top: 50px}
+				background-color: skyblue}
 </style>
 
 <script>
-$(document).ready(function(){
+	$(document).ready(function(){
  			$('#table').hide();
  			var flg = 'close';
  			$('#button').click(function(){
@@ -210,70 +212,74 @@ $(document).ready(function(){
 							</ul></section>
 							<br>
 
-			<p><a href="openwin.html" onclick="m_win(this.href,null,600,500); return false;">
-				<input type="button" value="検索" ></a></p>
+			<div class="bb">
+				<p class="button"><a href="openwin.html" onclick="m_win(this.href,null,600,500); return false;">
+					<input type="button" value="検索" style="width:50px;height:40px"></a></p>
+			</div>
 				</form>
-			<button id="button">詳細検索表示</button>
 		</nav>
 
-		<table id="table">
-      		<tr>
-      			<td><span>高速道路</span>
-      				<select name="rd" id="rd">
-      					<option value>指定しない</option>
-      					<option value="１">沖縄自動車道</option>
-      					<option value="許田">許田</option>
-      					<option value="宜野座">宜野座</option>
-      					<option value="金武">金武</option>
-      					<option value="屋嘉">屋嘉</option>
-      					<option value="石川">石川</option>
-      					<option value="沖縄北">沖縄北</option>
-      					<option value="沖縄南">沖縄南</option>
-      					<option value="北中城">北中城</option>
-      					<option value="西原">西原</option>
-  						<option value="那覇">那覇</option>
-  						<option value="南風原北">南風原北</option>
-  						<option value="南風原南">南風原南</option>
-  						<option value="豊見城">豊見城</option>
-  						<option value="豊見城・名嘉地">豊見城・名嘉地</option>
-      				</select>
-      				<span>ICからの距離</span>
-      				<select name="kyori" id="kyori">
-      					<option value="1">指定しない</option>
-      					<option value="2">5km以内</option>
-      					<option value="3">10km以内</option>
-      					<option value="4">15km以内</option>
-      					<option value="5">20km以内</option>
-      					<option value="6">30km以内</option>
-      				</select>
-      			</td>
-      		</tr>
-      		<tr>
-      			<td><span>コースのタイプ</span>
-      						<label for="丘陵"><input type="checkbox">丘陵</label>
-      						<label for="林間"><input type="checkbox">林間</label>
-      						<label for="河川敷"><input type="checkbox">河川敷</label>
-      						<label for="山岳"><input type="checkbox">山岳</label>
-      						<label for="シーサイド"><input type="checkbox">シーサイド</label>
-      			</td>
-      		</tr>
-      		<tr>
-  			<td><span>プレースタイル</span>
-  						<label for="昼食付き"><input type="checkbox">昼食付き</label>
-  						<label for="練習場あり"><input type="checkbox">練習場あり</label>
-  						<label for="2サム保障"><input type="checkbox">2サム保障</label>
-  						<label for="2B"><input type="checkbox">2B</label>
-  						<label for="3B"><input type="checkbox">3B</label>
-  						<label for="4B"><input type="checkbox">４B</label>
-  						<label for="キャディー付き"><input type="checkbox">キャディー付き</label>
-  						<label for="2人乗りカート"><input type="checkbox">2人乗りカート</label>
-  						<label for="4~5人乗りカート"><input type="checkbox">4~5人乗りカート</label>
-  						<label for="手引きカート"><input type="checkbox">手引きカート</label>
-  						<label for="電動カート"><input type="checkbox">電動カート</label>
-  			</td>
-      		</tr>
-      </table>
-		
+		<div id="wrap">
+			<table id="table">
+			      		<tr>
+			      			<td><span>高速道路</span>
+			      				<select name="rd" id="rd">
+			      					<option value>指定しない</option>
+			      					<option value="１">沖縄自動車道</option>
+			      					<option value="許田">許田</option>
+			      					<option value="宜野座">宜野座</option>
+			      					<option value="金武">金武</option>
+			      					<option value="屋嘉">屋嘉</option>
+			      					<option value="石川">石川</option>
+			      					<option value="沖縄北">沖縄北</option>
+			      					<option value="沖縄南">沖縄南</option>
+			      					<option value="北中城">北中城</option>
+			      					<option value="西原">西原</option>
+			  						<option value="那覇">那覇</option>
+			  						<option value="南風原北">南風原北</option>
+			  						<option value="南風原南">南風原南</option>
+			  						<option value="豊見城">豊見城</option>
+			  						<option value="豊見城・名嘉地">豊見城・名嘉地</option>
+			      				</select>
+			      				<span>ICからの距離</span>
+			      				<select name="kyori" id="kyori">
+			      					<option value="1">指定しない</option>
+			      					<option value="2">5km以内</option>
+			      					<option value="3">10km以内</option>
+			      					<option value="4">15km以内</option>
+			      					<option value="5">20km以内</option>
+			      					<option value="6">30km以内</option>
+			      				</select>
+			      			</td>
+			      		</tr>
+			      		<tr>
+			      			<td><span>コースのタイプ</span>
+			      						<label for="丘陵"><input type="checkbox">丘陵</label>
+			      						<label for="林間"><input type="checkbox">林間</label>
+			      						<label for="河川敷"><input type="checkbox">河川敷</label>
+			      						<label for="山岳"><input type="checkbox">山岳</label>
+			      						<label for="シーサイド"><input type="checkbox">シーサイド</label>
+			      			</td>
+			      		</tr>
+			      		<tr>
+			  			<td><span>プレースタイル</span>
+			  						<label for="昼食付き"><input type="checkbox">昼食付き</label>
+			  						<label for="練習場あり"><input type="checkbox">練習場あり</label>
+			  						<label for="2サム保障"><input type="checkbox">2サム保障</label>
+			  						<label for="2B"><input type="checkbox">2B</label>
+			  						<label for="3B"><input type="checkbox">3B</label>
+			  						<label for="4B"><input type="checkbox">４B</label>
+			  						<label for="キャディー付き"><input type="checkbox">キャディー付き</label>
+			  						<label for="2人乗りカート"><input type="checkbox">2人乗りカート</label>
+			  						<label for="4~5人乗りカート"><input type="checkbox">4~5人乗りカート</label>
+			  						<label for="手引きカート"><input type="checkbox">手引きカート</label>
+			  						<label for="電動カート"><input type="checkbox">電動カート</label>
+			  			</td>
+			      		</tr>
+			      </table>
+		</div>
+		<button id="button">詳細検索表示</button>
+
 		<p style="text-align:right;"><a href="kensaku.html" >ページの上に戻る</a></p>
 	<footer>
 			<p>All contents @copyright 20xx Pacific Golf All rights.</p>
