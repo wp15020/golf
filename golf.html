@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>ゴルフ場検索</title>
+	<script type='text/javascript' src='jquery-1.11.3.min.js'></script>
 	<style>
 		body {width: 900px;
 				margin-right: auto;
@@ -113,8 +114,49 @@
 				text-align: center;
 				font-size: 15px;
 				background-color: skyblue;}
-
+	.tooltip {margin: 100px 0 0;
+				list-style: none}
+	.tooltip li {margin: 0 10px;
+				float: left;
+				position: relative;
+				text-align: center}
+	.tooltip a {padding: 14px 10px;
+				display: block;
+				text-decoration: none;
+				font-weight: bold;
+				width: 180px;
+				font-size: 30px;}
+	.tooltip li span {background: #ffc;
+					border: 1px solid #fc6;
+					height: 45px;
+					width: 200px;
+					position: absolute;
+					top: -85px;
+					left: 0;
+					text-align: center;
+					padding: 5px 12px 5px;
+					z-index: 2;
+					vertical-align: bottom;
+					display: none}
+	h2 {clear: both;
+		text-align: center;
+		font-size: 24px;
+		color: #fff;
+		width: 93%;
+	    position: relative;
+	    padding: 8px 0 8px 24px;
+	    border-radius: 32px 0;
+	    background: #d14;}
+		
 	</style>
+	<script>
+		$(function(){
+  $(".tooltip a").hover(function() {
+    $(this).next("span").animate({opacity: "show", top: "-75"}, "slow");}, function() {
+      $(this).next("span").animate({opacity: "hide", top: "-85"}, "fast");
+    });
+});
+	</script>
 </head>
 <body>
 	<header>
@@ -128,14 +170,29 @@
 		<p class="help"><a href="http://gora.golf.rakuten.co.jp/">困った時はこちら！！</a></p>
 	</header>
 		<div id="stage">
-			<div id="photo1" class="pic"><img src="images/home1.jpg" height="200" width="300" alt=""></div>
-			<div id="photo2" class="pic"><img src="images/home2.jpg" height="200" width="300" alt=""></div>
-			<div id="photo3" class="pic"><img src="images/home3.jpg" height="200" width="300" alt=""></div>
-			<div id="photo4" class="pic"><img src="images/home4.jpg" height="200" width="300" alt=""></div>
-			<div id="photo5" class="pic"><img src="images/home5.jpg" height="200" width="300" alt=""></div>
-			<div id="photo6" class="pic"><img src="images/home6.jpg" height="200" width="300" alt=""></div>
+			<div id="photo1" class="pic"><img src="images/home1.jpg" height="350" width="300" alt=""></div>
+			<div id="photo2" class="pic"><img src="images/home2.jpg" height="350" width="300" alt=""></div>
+			<div id="photo3" class="pic"><img src="images/home3.jpg" height="350" width="300" alt=""></div>
+			<div id="photo4" class="pic"><img src="images/home4.jpg" height="350" width="300" alt=""></div>
+			<div id="photo5" class="pic"><img src="images/home5.jpg" height="350" width="300" alt=""></div>
+			<div id="photo6" class="pic"><img src="images/home6.jpg" height="350" width="300" alt=""></div>
 			<div style="padding:28%;background:transparent;"></div>
 		</div>
+
+		<ul class="tooltip">
+			<li>
+				<a href="https://ja-jp.facebook.com/">facebook</a>
+				<span>Facebookアカウントをお持ちの方はぜひ「いいね！」</span>
+			</li>
+			<li>
+				<a href="http://line.me/ja/">Line</a>
+				<span>コミュニケーションには最適！<br>スタンプもあるよ！</span>
+			</li>
+			<li>
+				<a href="https://twitter.com">Twitter</a>
+				<span>Twitterで毎日webに関する情報をお届けしています。</span>
+			</li>
+		</ul>
 
 		<h2>おすすめゴルフ場（沖縄）</h2>
 <div class="main">
