@@ -53,6 +53,7 @@
 					padding-left: 8px}
 		article h1:before {content: "<";
 							position: absolute;
+							color: #d2691e;
 							top: middle;
 							left: 235px;
 							font-size: 30px;}
@@ -61,7 +62,7 @@
 							left: 235px;
 							width: 0;
 							height: 50px;
-							border: 3px solid #000000;
+							border: 3px solid #880000;
 							border-radius: 3px;
 							-webkit-transform: rotate(-5deg);
 							-ms-transform: rotate(-5deg);
@@ -91,11 +92,12 @@
 		article section h2:before {content: "";
 									position: relative;
 									border: 3px solid #880000;
-									left: -20px}
+									left: -20px;
+									bottom: 5px}
 		article section h2:after {content: ">";
-									position: absolute;
-									left: 250px;
-									bottom: 98px;
+									position: relative;
+									right: 538px;
+									bottom: 6px;
 									font-size: 30px;
 									color: #ffd700}
 		.image {position: relative;
@@ -115,9 +117,9 @@
 						border-color: transparent;
 						border-top-color: #000000}
 		.corse:after {content: "";
-						position: absolute;
-						left: 240px;
-						bottom: -35px;
+						position: relative;
+						right: 221px;
+						top:48px;
 						border-width: 14px;
 						border-style: solid;
 						border-color: transparent;
@@ -129,18 +131,18 @@
 				background-color: skyblue;}
 		body > #page {text-align: right}
 
-
 	</style>
 
 </head>
 <body>
 		<header>
-		<ul class="table">
-			<li><a href="index.html">top</a></li>
-			<li><a href="golf.html">home</a></li>
-			<li><a href="kensaku.html">ゴルフ場検索</a></li>
-			<li><a href="blog.html">運試し</a></li>
-		</ul>
+		
+				<ul class="table">
+					<li><a href="index.html">top</a></li>
+					<li><a href="golf.html">home</a></li>
+					<li><a href="kensaku.html">ゴルフ場検索</a></li>
+					<li><a href="blog.html">運試し</a></li>
+				</ul>
 		<p class="help"><a href="http://gora.golf.rakuten.co.jp/">困った時はこちら！！</a></p>
 	</header>
 		<p class="clubhouse"><img src="images/golf_0101.jpg" height="300" width="740" alt=""></p>
@@ -201,5 +203,4 @@
 	</footer>
 
 </body>
-
 </html>
