@@ -15,7 +15,8 @@
 				font-size: 20px;
 				width: 400px;
 				height: 30px;
-				text-align: center}
+				text-align: center;
+				padding-left: 24px}
 		.table li {display: table-cell;
 					border: inset 2px #c0c0c0;
 					background-color: green;
@@ -47,22 +48,38 @@
 					width: 745px}
 		article h1 {border: 1px solid #000;
 					background-color: #ffd700;
-					width: 150px;
+					position: relative;
+					display: block;
+					left: 10px;
+					width: 170px;
 					height: 30px;
 					margin-left: 20px;
-					padding-left: 8px}
+					padding-left: 0}
 		article h1:before {content: "<";
+<<<<<<< HEAD
 							position: absolute;
 							color: #d2691e;
 							top: middle;
 							left: 235px;
 							font-size: 30px;}
+=======
+							position: relative;
+							color: #ffd700;
+							top: -5px;
+							left: -12px;
+							font-size: 20px;}
+>>>>>>> 98aa798a2679bf0500bd88eb9ae4723873666948
 		article h1:after {content: "";
-							position: absolute;
-							left: 235px;
+							position: relative;
+							bottom: 0px;
+							left: -165px;
 							width: 0;
 							height: 50px;
+<<<<<<< HEAD
 							border: 3px solid #880000;
+=======
+							border: 3px solid #880000;;
+>>>>>>> 98aa798a2679bf0500bd88eb9ae4723873666948
 							border-radius: 3px;
 							-webkit-transform: rotate(-5deg);
 							-ms-transform: rotate(-5deg);
