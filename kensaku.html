@@ -11,13 +11,12 @@
 	body {width: 900px;
 			margin: 0 auto;
 			font-family: impact}
+	ul {position: relative;
+			right: 25px}
 	.table {display: table;
-			font-family: arial;
 			font-size: 20px;
 			width: 400px;
 			height: 30px;
-			position: relative;
-			left: -40px;
 			text-align: center}
 		.table li {display: table-cell;
 					border: inset 2px #c0c0c0;
@@ -33,9 +32,9 @@
 				margin-left: 30px}
 		.clubhouse {clear: both;
 					margin-top: 0}
-		.help {position: absolute;
-					right: 390px;
-					top: 14px}
+		.help {position: relative;
+					left: 590px;
+					bottom: 10px;}
 		.table li a:hover {background-color: limegreen;
 							box-shadow: 2px 2px 5px 0 rgba(10,10,10,0.5) inset}
 		header p {position: relative;
@@ -45,14 +44,14 @@
 		.image {position: relative;
 				left: 10px}
 
-	ul {list-style-type: none;
-		font-style: oblique}
+	ul {list-style-type: none}
 
 	nav {border: 7px ridge #e0e0e0;
 		width: 390px;
 		height: 360px;
 		background-color: #f5ded3;
-		font-family: arial;}
+		font-family: arial;
+		float: left;}
 
 	.day {margin-left: 0px}
 	.day p {margin-bottom: 0;
@@ -63,6 +62,8 @@
 
 	.scroll {overflow-y: scroll;
 			overflow-x: hidden;
+			top: -5px;
+			left: -1px;
 			width: 100px;
 			height: 120px;
 			background-color: #e0e0e0;
@@ -92,7 +93,7 @@
 			margin-left: 10px;
 			background-color: #c0c0c0;
 			position: relative;
-			bottom: -48px}
+			bottom: -42px}
 	.price p {border-bottom: 1px solid #c0c0c0;
 			margin-top: 3px;
 			background-color: #008000;
@@ -107,15 +108,15 @@
 			margin-right: 10px;
 			position: relative;
 			top: -50px;
-			background-color: #008000;}
-	.area p {color: snow}
+			background: #008000}
+	.area p {color: snow;}
 
 	form {margin-left: 20px;
 			margin-top: 10px}
 
 	table {border: 7px ridge #c0c0c0;
 			background-color: #f5ded3;
-			width: 63%}
+			width: 80%}
 	table td {border-bottom:  3px solid #c0c0c0;}
 	table td span {font-size: 18px;
 					font-family: inpact;
@@ -129,7 +130,12 @@
 				border-bottom: 5px double #000000;
 				text-align: center;
 				font-size: 15px;
-				background-color: skyblue}
+				background-color: skyblue;
+				clear: both;}
+
+		.bd {color: red;
+			font-size: 30px;
+			}
 </style>
 
 <script>
@@ -137,9 +143,19 @@
  			$('#table').hide();
  			var flg = 'close';
  			$('#button').click(function(){
- 			$('#table').fadeToggle();
+ 			$('#table').slideToggle();
  			});
  		});
+
+	$(document).ready(function(){
+		$(".ween").hide();
+			var flg = "close";
+			$(".bd").click(function(){
+				$(".ween").animate({
+					width: "toggle", opacity: "toggle"}, "slow", "swing");
+			});
+	});
+
 </script>
 
 </head>
@@ -218,6 +234,9 @@
 			</div>
 				</form>
 		</nav>
+		<div class="bd">happy!</div>
+		<div class="ween"><img src="images/halloween.jpg" height="159" width="240" alt="">
+		</div>
 
 		<div id="wrap">
 			<table id="table">
@@ -253,34 +272,38 @@
 			      			</td>
 			      		</tr>
 			      		<tr>
-			      			<td><span>コースのタイプ</span>
-			      						<label for="丘陵"><input type="checkbox">丘陵</label>
-			      						<label for="林間"><input type="checkbox">林間</label>
-			      						<label for="河川敷"><input type="checkbox">河川敷</label>
-			      						<label for="山岳"><input type="checkbox">山岳</label>
-			      						<label for="シーサイド"><input type="checkbox">シーサイド</label>
-			      			</td>
+      			<td><span>コースのタイプ</span>
+      						<label for="丘陵"><input type="checkbox">丘陵</label>
+      						<label for="林間"><input type="checkbox">林間</label>
+      						<label for="河川敷"><input type="checkbox">河川敷</label>
+      						<label for="山岳"><input type="checkbox">山岳</label>
+      						<label for="シーサイド"><input type="checkbox">シーサイド</label>
+      			</td>
 			      		</tr>
 			      		<tr>
-			  			<td><span>プレースタイル</span>
-			  						<label for="昼食付き"><input type="checkbox">昼食付き</label>
-			  						<label for="練習場あり"><input type="checkbox">練習場あり</label>
-			  						<label for="2サム保障"><input type="checkbox">2サム保障</label>
-			  						<label for="2B"><input type="checkbox">2B</label>
-			  						<label for="3B"><input type="checkbox">3B</label>
-			  						<label for="4B"><input type="checkbox">４B</label>
-			  						<label for="キャディー付き"><input type="checkbox">キャディー付き</label>
-			  						<label for="2人乗りカート"><input type="checkbox">2人乗りカート</label>
-			  						<label for="4~5人乗りカート"><input type="checkbox">4~5人乗りカート</label>
-			  						<label for="手引きカート"><input type="checkbox">手引きカート</label>
-			  						<label for="電動カート"><input type="checkbox">電動カート</label>
-			  			</td>
+	<td><span>プレースタイル</span>
+				<label for="昼食付き"><input type="checkbox">昼食付き</label>
+				<label for="練習場あり"><input type="checkbox">練習場あり</label>
+				<label for="2サム保障"><input type="checkbox">2サム保障</label>
+				<label for="2B追加料金無し"><input type="checkbox">2B追加料金無し</label>
+				<label for="3B追加料金無し"><input type="checkbox">3B追加料金無し</label>
+				<label for="4サム割引"><input type="checkbox">４サム割引</label>
+				<label for="キャディー付き"><input type="checkbox">キャディー付き</label>
+				<label for="2人乗りカート"><input type="checkbox">2人乗りカート</label>
+				<label for="4~5人乗りカート"><input type="checkbox">4~5人乗りカート</label>
+				<label for="手引きカート"><input type="checkbox">手引きカート</label>
+				<label for="電動カート"><input type="checkbox">電動カート</label>
+				<label for="９Ｈプレー"><input type="checkbox">９Ｈプレー</label>
+				<label for="追加０．５Ｒ"><input type="checkbox">追加０．５Ｒ</label>
+				<label for="レディース"><input type="checkbox">レディース</label>
+				<label for="シニア"><input type="checkbox">シニア</label>
+	</td>
 			      		</tr>
 			      </table>
 		</div>
-		<button id="button">詳細検索表示</button>
+		<p style="clear: both;"><button id="button">詳細検索表示</button></p>
 
-		<p style="text-align:right;"><a href="kensaku.html" >ページの上に戻る</a></p>
+		<p style="text-align:right; clear:both;"><a href="kensaku.html" >ページの上に戻る</a></p>
 	<footer>
 			<p>All contents @copyright 20xx Pacific Golf All rights.</p>
 	</footer>

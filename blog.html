@@ -5,17 +5,16 @@
 	<title>占い</title>
 	<style>
 		body {width: 900px;
-				margin-right: auto;
-				margin-left: auto;
-				font-family: impact}
+			margin: 0 auto;
+			font-family: impact}
 		ul {position: relative;
 			right: 25px}
 		.table {display: table;
-				font-family: fantasy;
 				font-size: 20px;
 				width: 400px;
 				height: 30px;
 				text-align: center}
+
 		.table li {display: table-cell;
 					border: inset 2px #c0c0c0;
 					background-color: green;
@@ -28,15 +27,15 @@
 					padding: 3px}
 		.tables {vertical-align: bottom;
 				margin-left: 30px}
-		
-		.help {position: absolute;
-					right: 390px;
-					top: 14px}
+
+		.help {position: relative;
+					left: 590px;
+					bottom: 10px;}
 		.table li a:hover {background-color: limegreen;
 							box-shadow: 2px 2px 5px 0 rgba(10,10,10,0.5) inset}
 
-		header p {clear: both;
-					float: left}
+		header p {clear: both;}
+		
 		article {background-image: url(images/5.jpg);
 				background-repeat: no-repeat;
 				background-position: 100px 50px}
@@ -169,90 +168,91 @@
 	</style>
 </head>
 <body>
+	<div id="container">
 	<header>
-			
-				<ul class="table">
-					<li><a href="index.html">top</a></li>
-					<li><a href="golf.html">home</a></li>
-					<li><a href="kensaku.html">ゴルフ場検索</a></li>
-					<li><a href="blog.html">運試し</a></li>
-				</ul>
-		<p class="help"><a href="http://gora.golf.rakuten.co.jp/">困った時はこちら！！</a></p>
-	</header>
-
-<article>
-	
-		<input type="radio" name="swtich" id="swtich-start" checked>
-		<input type="radio" name="swtich" id="swtich-daikiti">
-		<input type="radio" name="swtich" id="swtich-tyuukiti">
-		<input type="radio" name="swtich" id="swtich-syoukiti">
-		<input type="radio" name="swtich" id="swtich-kiti">
-		<input type="radio" name="swtich" id="swtich-suekiti">
-		<input type="radio" name="swtich" id="swtich-kyou">
-		<input type="radio" name="swtich" id="swtich-daikyou">
-	
-		<div id="btn">
-			<label for="swtich-daikiti"></label>
-			<label for="swtich-tyuukiti"></label>
-			<label for="swtich-syoukiti"></label>
-			<label for="swtich-kiti"></label>
-			<label for="swtich-suekiti"></label>
-			<label for="swtich-kyou"></label>
-			<label for="swtich-daikyou"></label>
+				
+					<ul class="table">
+						<li><a href="index.html">top</a></li>
+						<li><a href="golf.html">home</a></li>
+						<li><a href="kensaku.html">ゴルフ場検索</a></li>
+						<li><a href="blog.html">運試し</a></li>
+					</ul>
+			<p class="help"><a href="http://gora.golf.rakuten.co.jp/">困った時はこちら！！</a></p>
+		</header>
+		
+		<article>
+		
+			<input type="radio" name="swtich" id="swtich-start" checked>
+			<input type="radio" name="swtich" id="swtich-daikiti">
+			<input type="radio" name="swtich" id="swtich-tyuukiti">
+			<input type="radio" name="swtich" id="swtich-syoukiti">
+			<input type="radio" name="swtich" id="swtich-kiti">
+			<input type="radio" name="swtich" id="swtich-suekiti">
+			<input type="radio" name="swtich" id="swtich-kyou">
+			<input type="radio" name="swtich" id="swtich-daikyou">
+		
+			<div id="btn">
+				<label for="swtich-daikiti"></label>
+				<label for="swtich-tyuukiti"></label>
+				<label for="swtich-syoukiti"></label>
+				<label for="swtich-kiti"></label>
+				<label for="swtich-suekiti"></label>
+				<label for="swtich-kyou"></label>
+				<label for="swtich-daikyou"></label>
+			</div>
+		
+			<div id="hole">
+				<div id="paper-daikiti">
+					<h1>大吉</h1>
+						<dt>今日のラッキータグ</dt>
+						<dd>text-align</dd>
+					<p><label for="swtich-start">あと１回</label></p>
+				</div>
+				<div id="paper-tyuukiti">
+					<h1>中吉</h1>
+						<dt>今日のラッキータグ</dt>
+						<dd>float: left</dd>
+					<p><label for="swtich-start">あと１回</label></p>
+				</div>
+				<div id="paper-syoukiti">
+					<h1>小吉</h1>
+						<dt>今日のラッキータグ</dt>
+						<dd>display: inline</dd>
+					<p><label for="swtich-start">あと１回</label></p>
+				</div>
+				<div id="paper-kiti">
+					<h1>吉</h1>
+						<dt>今日のラッキータグ</dt>
+						<dd>clear: both</dd>
+					<p><label for="swtich-start">あと１回</label></p>
+				</div>
+				<div id="paper-suekiti">
+					<h1>末吉</h1>
+						<dt>今日のラッキータグ</dt>
+						<dd>padding-left</dd>
+					<p><label for="swtich-start">あと１回</label></p>
+				</div>
+				<div id="paper-kyou">
+					<h1>凶</h1>
+						<dt>今日のラッキータグ</dt>
+						<dd>border</dd>
+					<p><label for="swtich-start">あと１回</label></p>
+				</div>
+				<div id="paper-daikyou">
+					<h1>大凶</h1>
+						<dt>今日のラッキータグ</dt>
+						<dd>width</dd>
+					<p><label for="swtich-start">あと１回</label></p>
+				</div>
+			</div>
+		</article>
+		
+			<p style="text-align:right;"><a href="blog.html" >ページの上に戻る</a></p>
+		<footer>
+				<p>All contents @copyright 20xx Pacific Golf All rights.</p>
+		</footer>
+		
 		</div>
-	
-		<div id="hole">
-			<div id="paper-daikiti">
-				<h1>大吉</h1>
-					<dt>今日のラッキータグ</dt>
-					<dd>text-align</dd>
-				<p><label for="swtich-start">あと１回</label></p>
-			</div>
-			<div id="paper-tyuukiti">
-				<h1>中吉</h1>
-					<dt>今日のラッキータグ</dt>
-					<dd>float: left</dd>
-				<p><label for="swtich-start">あと１回</label></p>
-			</div>
-			<div id="paper-syoukiti">
-				<h1>小吉</h1>
-					<dt>今日のラッキータグ</dt>
-					<dd>display: inline</dd>
-				<p><label for="swtich-start">あと１回</label></p>
-			</div>
-			<div id="paper-kiti">
-				<h1>吉</h1>
-					<dt>今日のラッキータグ</dt>
-					<dd>clear: both</dd>
-				<p><label for="swtich-start">あと１回</label></p>
-			</div>
-			<div id="paper-suekiti">
-				<h1>末吉</h1>
-					<dt>今日のラッキータグ</dt>
-					<dd>padding-left</dd>
-				<p><label for="swtich-start">あと１回</label></p>
-			</div>
-			<div id="paper-kyou">
-				<h1>凶</h1>
-					<dt>今日のラッキータグ</dt>
-					<dd>border</dd>
-				<p><label for="swtich-start">あと１回</label></p>
-			</div>
-			<div id="paper-daikyou">
-				<h1>大凶</h1>
-					<dt>今日のラッキータグ</dt>
-					<dd>width</dd>
-				<p><label for="swtich-start">あと１回</label></p>
-			</div>
-		</div>
-</article>
-
-		<p style="text-align:right;"><a href="blog.html" >ページの上に戻る</a></p>
-	<footer>
-			<p>All contents @copyright 20xx Pacific Golf All rights.</p>
-	</footer>
-
-	
 </body>
 </html>
 
