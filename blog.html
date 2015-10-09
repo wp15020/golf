@@ -3,54 +3,71 @@
 <head>
 	<meta charset="UTF-8">
 	<title>占い</title>
+	<script type='text/javascript' src='jquery-1.11.3.min.js'></script>
+
 	<style>
 		body {width: 900px;
 			margin: 0 auto;
-			font-family: impact}
-		ul {position: relative;
-			right: 25px}
-		.table {display: table;
+			font-family: impact;
+			background: #000000;}
+		#container {background: #fff;}
+		#slide_menu {position: fixed;
+						top: 0;
+						left: -240px;
+						width: 225px;
+						height: 100%;
+						background: #00bb00;}
+		#button {width: 100px;
+				height: 100px;
+				color: snow;
 				font-size: 20px;
-				width: 400px;
-				height: 30px;
-				text-align: center}
+				background: #ff3300;}
+		
+		ul {list-style-type: none;
+			font-size: 30px;
+			margin-left: 0;}
+		.table {}
 
-		.table li {display: table-cell;
-					border: inset 2px #c0c0c0;
-					background-color: green;
-					border: 1px solid darkgreen}
-		.table li a {color: snow;
-					text-decoration: none;
-					display: block;
-					height: 20px;
-					width: 130px;
-					padding: 3px}
-		.tables {vertical-align: bottom;
-				margin-left: 30px}
+		.table li {list-style-type: none;
+			font-size: 30px;
+			margin-left: 0;}
+		.table li a {text-decoration: none;}
 
-		.help {position: relative;
-					left: 590px;
-					bottom: 10px;}
+		.help {position: absolute;
+					right: 230px;
+					top: 0px;}
 		.table li a:hover {background-color: limegreen;
+							border-radius: 3px;
 							box-shadow: 2px 2px 5px 0 rgba(10,10,10,0.5) inset}
 
 		header p {clear: both;}
-		
-		article {background-image: url(images/5.jpg);
-				background-repeat: no-repeat;
-				background-position: 100px 50px}
+
+		#bxslider {margin: 0 auto;
+					width: 275px;
+					height: 183px;
+					text-align: left;
+					overflow: hidden;
+					position: relative;
+					bottom: 70px;}
+		#bxslider img {top: 0;
+						left: 0;
+						position: absolute;}
+
+	article {background-image: url(images/5.jpg);
+			background-repeat: no-repeat;
+			background-position: 180px 0px}
 
 	input {display: none}
 	#btn {overflow: hidden;
 		position: relative;
-		top: -10px;
-		right: 80px;
+		bottom: 100px;
+		right: 0px;
 		width: 200px;
 		height: 60px;
 		margin: 50px auto 0;
 		background-color: #cc0000;
 		box-shadow: 0 0 3px rgba(0,0,0,0.2);
-		border: 1px solid #bbb;
+		border: 1px solid #000;
 		border-radius: 5px;
 		line-height: 60px;
 		text-align: center;
@@ -91,8 +108,8 @@
 	@-webkit-keyframes randombtn
 		{from { top: 0%; } to { top: -700%; }}
 	#hole {position: relative;
-			top: 15px;
-			right: 75px;
+			bottom: 30px;
+			right: -5px;
 			overflow: hidden;
 			margin: 240px auto 0;
 			width: 250px;
@@ -166,20 +183,63 @@
 				background-color: skyblue;}
 
 	</style>
+	<script>
+	$(function(){
+		var menu = $('#slide_menu'),
+			menuBtn = $('#button'),
+			body = $(document.body),
+			menuWidth = menu.outerWidth();
+
+		menuBtn.on('click', function(){
+			body.toggleClass('open');
+			if(body.hasClass('open')){
+				body.animate({'left' : menuWidth}, 300);
+				menu.animate({'left' : 0}, 300);
+			} else {
+				menu.animate({'left' : -menuWidth }, 300);
+				body.animate({'left' : 0}, 300);
+			}
+		});
+	});
+	$(function(){
+    var setImg = '#bxslider';
+    var fadeSpeed = 1500;
+    var switchDelay = 5000;
+ 
+    $(setImg).children('img').css({opacity:'0'});
+    $(setImg + ' img:first').stop().animate({opacity:'1',zIndex:'20'},fadeSpeed);
+ 
+    setInterval(function(){
+        $(setImg + ' :first-child').animate({opacity:'0'},fadeSpeed).next('img').animate({opacity:'1'},fadeSpeed).end().appendTo(setImg);
+    },switchDelay);
+});
+</script>
 </head>
 <body>
 	<div id="container">
 	<header>
 				
-					<ul class="table">
-						<li><a href="index.html">top</a></li>
-						<li><a href="golf.html">home</a></li>
-						<li><a href="kensaku.html">ゴルフ場検索</a></li>
-						<li><a href="blog.html">運試し</a></li>
-					</ul>
+					<nav id="slide_menu">
+						<ul class="table">
+							<li><a href="index.html">top</a></li>
+							<li><a href="golf.html">home</a></li>
+							<li><a href="kensaku.html">ゴルフ場検索</a></li>
+							<li><a href="blog.html">運試し</a></li>
+						</ul>
+					</nav>
+				<button id="button">MENU</button>
 			<p class="help"><a href="http://gora.golf.rakuten.co.jp/">困った時はこちら！！</a></p>
 		</header>
-		
+
+		<div id="bxslider">
+	<img src="images/sizen.jpg" height="183" width="275" alt="">
+	<img src="images/sizen1.jpg" height="183" width="275" alt="">
+	<img src="images/sizen2.jpg" height="183" width="275" alt="">
+	<img src="images/sizen3.jpg" height="183" width="275" alt="">
+	<img src="images/sizen4.jpg" height="183" width="275" alt="">
+	<img src="images/sizen5.jpg" height="183" width="275" alt="">
+	<img src="images/sizen6.jpg" height="183" width="275" alt="">
+		</div>
 		<article>
 		
 			<input type="radio" name="swtich" id="swtich-start" checked>
@@ -252,7 +312,7 @@
 				<p>All contents @copyright 20xx Pacific Golf All rights.</p>
 		</footer>
 		
-		</div>
+	</div>
 </body>
 </html>
 
