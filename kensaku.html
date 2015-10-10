@@ -10,47 +10,64 @@
 <style>
 	body {width: 900px;
 			margin: 0 auto;
-			font-family: impact}
-	ul {position: relative;
-			right: 25px}
-	.table {display: table;
+			font-family: impact;
+			background: #000;
+			position: relative;
+			left: 0;
+			overflow-x: hidden;}
+
+		#container {background: #fff;
+					position: relative;
+					left: 0px;
+					overflow-x: hidden;}
+		#slide_menu {position: fixed;
+					top: 0;
+					left: -240px;
+					width: 225px;
+					height: 100%;
+					background: #00bb00;}
+		#button {width: 100px;
+				height: 100px;
+				color: snow;
+				font-size: 20px;
+				background: #ff3300;}
+		
+		ul {list-style-type: none;
+			margin-left: 0;
+			padding-left: 0;
 			font-size: 20px;
-			width: 400px;
-			height: 30px;
-			text-align: center}
-		.table li {display: table-cell;
-					border: inset 2px #c0c0c0;
-					background-color: green;
-					border: 1px solid darkgreen}
-		.table li a {color: snow;
+			border-top: 1px solid #454545;
+			border-bottom: 1px solid #454545;}
+
+		.table li {border-top: 1px solid #454545;
+					border-bottom: 1px solid #454545;
+					font-size: 27px;}
+		.table li a {display: block;
+					padding: 20px;
+					color: #000;
 					text-decoration: none;
-					display: block;
-					height: 20px;
-					width: 130px;
-					padding: 3px}
-		.tables {vertical-align: bottom;
-				margin-left: 30px}
-		.clubhouse {clear: both;
-					margin-top: 0}
-		.help {position: relative;
-					left: 590px;
-					bottom: 10px;}
+					line-height: middle;}
+
 		.table li a:hover {background-color: limegreen;
-							box-shadow: 2px 2px 5px 0 rgba(10,10,10,0.5) inset}
+							border-radius: 3px;
+							box-shadow: 3px 3px 5px 0 rgba(10,10,10,0.5) inset}
+
+		.help {position: absolute;
+					right: 30px;
+					top: 0px;}
 		header p {position: relative;
-					left: 800px}
+					right: 220px}
 
 	
-		.image {position: relative;
-				left: 10px}
+		.image {text-align: center;}
 
 	ul {list-style-type: none}
 
 	nav {border: 7px ridge #e0e0e0;
 		width: 390px;
-		height: 360px;
+		height: 390px;
 		background-color: #f5ded3;
-		font-family: arial;
+		font-family: impact;
 		float: left;}
 
 	.day {margin-left: 0px}
@@ -86,7 +103,6 @@
 			color: snow}
 	.times {float: left;}
 
-
 	.price {border: 1px solid #c0c0c0;
 			width: 200px;
 			margin-top: 10px;
@@ -119,7 +135,7 @@
 			width: 80%}
 	table td {border-bottom:  3px solid #c0c0c0;}
 	table td span {font-size: 18px;
-					font-family: inpact;
+					font-family: impact;
 					padding: 0 7px 0 7px}
 	.bb {text-align: right;
 		margin-right: 20px;
@@ -142,7 +158,7 @@
 	$(document).ready(function(){
  			$('#table').hide();
  			var flg = 'close';
- 			$('#button').click(function(){
+ 			$('#button1').click(function(){
  			$('#table').slideToggle();
  			});
  		});
@@ -155,20 +171,41 @@
 					width: "toggle", opacity: "toggle"}, "slow", "swing");
 			});
 	});
+	
+	$(function(){
+		var menu = $('#slide_menu'),
+			menuBtn = $('#button'),
+			body = $(document.body),
+			menuWidth = menu.outerWidth();
 
+		menuBtn.on('click', function(){
+			body.toggleClass('open');
+			if(body.hasClass('open')){
+				body.animate({'left' : menuWidth}, 300);
+				menu.animate({'left' : 0}, 300);
+			} else {
+				menu.animate({'left' : -menuWidth }, 300);
+				body.animate({'left' : 0}, 300);
+			}
+		});
+	});
 </script>
 
 </head>
 <body>
+	<div id="container">
 	<header>
-		<ul class="table">
-			<li><a href="index.html">top</a></li>
-			<li><a href="golf.html">home</a></li>
-			<li><a href="kensaku.html">ゴルフ場検索</a></li>
-			<li><a href="blog.html">運試し</a></li>
-		</ul>
+		<div id="slide_menu">
+						<ul class="table">
+							<li><a href="index.html">top</a></li>
+							<li><a href="golf.html">home</a></li>
+							<li><a href="kensaku.html">ゴルフ場検索</a></li>
+							<li><a href="blog.html">運試し</a></li>
+						</ul>
+					</div>
+				<button id="button">MENU</button>
 		<p class="help"><a href="http://gora.golf.rakuten.co.jp/">困った時はこちら！！</a></p>
-		<img src="images/crown1.jpg" height="180" width="549" alt="">
+	<div class="image"><img src="images/crown1.jpg" height="180" width="549" alt=""></div>
 	</header>
 
 		<nav>
@@ -301,12 +338,14 @@
 			      		</tr>
 			      </table>
 		</div>
-		<p style="clear: both;"><button id="button">詳細検索表示</button></p>
+		<p style="clear: both;"><button id="button1">詳細検索表示</button></p>
 
-		<p style="text-align:right; clear:both;"><a href="kensaku.html" >ページの上に戻る</a></p>
+		<p style="text-align:right; clear:both;  margin-right:20px;"><a href="kensaku.html" >ページの上に戻る</a></p>
 	<footer>
 			<p>All contents @copyright 20xx Pacific Golf All rights.</p>
 	</footer>
+
+</div>
 
 	<script type="text/javascript">
 		function m_win(url,windowname,width,height) {

@@ -3,47 +3,67 @@
 <head>
 	<meta charset="UTF-8">
 	<title>ゴルフ場検索</title>
-	<style>
+	<script type='text/javascript' src='jquery-1.11.3.min.js'></script>
+<style>
 		body {width: 900px;
 			margin: 0 auto;
-			font-family: impact}
-		ul {position: relative;
-			right: 25px}
-		.table {display: table;
-				font-size: 20px;
-				width: 400px;
-				height: 30px;
-				text-align: center}
+			font-family: impact;
+			background: #000;
+			position: relative;
+			left: 0;
+			overflow-x: hidden;}
 
-		.table li {display: table-cell;
-					border: inset 2px #c0c0c0;
-					background-color: green;
-					border: 1px solid darkgreen}
-		.table li a {color: snow;
-					text-decoration: none;
-					display: block;
-					height: 20px;
-					width: 130px;
-					padding: 3px}
-		.tables {vertical-align: bottom;
-				margin-left: 30px}
+		#container {background: #fff;
+					position: relative;
+					left: 0px;
+					overflow-x: hidden;}
+		#slide_menu {position: fixed;
+					top: 0;
+					left: -240px;
+					width: 225px;
+					height: 100%;
+					background: #00bb00;}
+		#button {width: 100px;
+				height: 100px;
+				color: snow;
+				font-size: 20px;
+				background: #ff3300;}
 		
-		.help {position: relative;
-					left: 590px;
-					bottom: 10px;}
+		ul {list-style-type: none;
+			margin-left: 0;
+			padding-left: 0;
+			font-size: 20px;
+			border-top: 1px solid #454545;
+			border-bottom: 1px solid #454545;}
+
+		.table li {border-top: 1px solid #454545;
+					border-bottom: 1px solid #454545;
+					font-size: 27px;}
+		.table li a {display: block;
+					padding: 20px;
+					color: #000;
+					text-decoration: none;
+					line-height: middle;}
+
 		.table li a:hover {background-color: limegreen;
-							box-shadow: 2px 2px 5px 0 rgba(10,10,10,0.5) inset}
-		header p {clear: both;}
+							border-radius: 3px;
+							box-shadow: 3px 3px 5px 0 rgba(10,10,10,0.5) inset}
+
+		.help {position: absolute;
+					right: 30px;
+					top: 0px;}
+
+		.gazou {margin-left: 80px;}
 
 		nav {border: 7px ridge #e0e0e0;
 			width: 340px;
 			height: 290px}
-		header {float: left;}
 
 		.golfboll {background-image: url(images/golfboll.jpg);
 					opacity: 0.8;
 					filter: alpha(opacity=);
-					width: 745px}
+					width: 745px;
+					margin: 0 auto;}
 		article h1 {border: 1px solid #000;
 					background-color: #ffd700;
 					position: relative;
@@ -60,7 +80,6 @@
 							top: -5px;
 							left: -12px;
 							font-size: 20px;}
-
 		article h1:after {content: "";
 							position: relative;
 							bottom: 0px;
@@ -77,14 +96,18 @@
 		.golfboll p {margin-left: 45px;
 					font-size: 17px;}
 
-		.secp {margin-right: 450px;
+		.secp {margin-left: 10px;
+				display: block;
 				border: 1px solid #000000;
+				width: 420px;
 				padding: 3px;
 				border-radius: 3px;
 				background-color: azure;
 				box-shadow: 4px 4px;}
-		.secps {margin-right: 450px;
+		.secps {margin-left: 10px;
+				display: block;
 				border: 1px solid #000000;
+				width: 400px;
 				padding: 3px;
 				border-radius: 3px;
 				background-color: azure;
@@ -92,9 +115,11 @@
 
 		article section h2 {border-bottom: 5px solid green;
 							border-radius: 5px;
+							display: block;
 							width: 540px;
 							height: 30px;
-							padding-left: 40px}
+							padding-left: 40px;
+							margin-left: 20px;}
 		article section h2:before {content: "";
 									position: relative;
 									border: 3px solid #880000;
@@ -111,9 +136,11 @@
 		.corse {border: 2px solid #000000;
 				width: 500px;
 				height: 70px;
+				display: block;
 				border-radius: 8px;
 				background-color: azure;
-				padding: 2px}
+				padding: 2px;
+				margin-left: 20px;}
 		.corse:before {content: "";
 						position: relative;
 						left: 10px;
@@ -130,6 +157,9 @@
 						border-style: solid;
 						border-color: transparent;
 						border-top-color: #f0ffff}
+
+		#map {margin-left: 70px;}
+
 		footer {border-top: 5px double #000000;
 				border-bottom: 5px double #000000;
 				text-align: center;
@@ -138,37 +168,60 @@
 		body > #page {text-align: right}
 
 	</style>
+	<script>
+	$(function(){
+		var menu = $('#slide_menu'),
+			menuBtn = $('#button'),
+			body = $(document.body),
+			menuWidth = menu.outerWidth();
+
+		menuBtn.on('click', function(){
+			body.toggleClass('open');
+			if(body.hasClass('open')){
+				body.animate({'left' : menuWidth}, 300);
+				menu.animate({'left' : 0}, 300);
+			} else {
+				menu.animate({'left' : -menuWidth }, 300);
+				body.animate({'left' : 0}, 300);
+			}
+		});
+	});
+	</script>
 
 </head>
 <body>
-		<header>
-		
+	<div id="container">
+	<header>
+		<div id="slide_menu">
 				<ul class="table">
 					<li><a href="index.html">top</a></li>
 					<li><a href="golf.html">home</a></li>
 					<li><a href="kensaku.html">ゴルフ場検索</a></li>
 					<li><a href="blog.html">運試し</a></li>
 				</ul>
+		</div>
+		<button id="button">MENU</button>
 		<p class="help"><a href="http://gora.golf.rakuten.co.jp/">困った時はこちら！！</a></p>
 	</header>
-		<img src="images/golf_0101.jpg" height="300" width="740" alt="">
+		<div class="gazou">
+			<img src="images/golf_0101.jpg" height="300" width="740" alt="">
+		</div>
 	<article>
 			<div class="golfboll">
 				<h1>ゴルフ場検索</h1>
 				
 					<p>沖縄のゴルフ場検索なら、沖縄のゴルフ場をシンプル且つキレイなデザインで一括検索できる当サイトをご利用ください。ゴルフ場検索は今後当ホームページを使って探すこと間違いなし！！おみくじも引けちゃうよ！！</p>
 			</div>
-			
-			
+
 			<section>
 				<h2>ゴルフ場検索サイトなら当ＨＰが断然便利ですよ！</h2>
-				
+	
 					<p class="corse">ゴルフ場検索サイトでは全国のゴルフ場が検索できますが、沖縄県のゴルフ場には特に力を入れてます。コース情報なども見れるのでゴルフ場検索にはきっとお役に立ちますよ。</p>
 			</section>
 			<a href="kensaku.html">検索はこちら</a>
 			
 			<section>
-					<p class="secp">お好みの検索条件で探したい方はページ上部の検索ページからキーワードを入力してゴルフ場検索してみてください。<br>
+					<p class="secp">お好みの検索条件で探したい方はページ上部の検索ページからキーワードを入力してゴルフ場検索してみてください。</p><br>
 	
 					<p class="secps">地域別から都道府県別、海外の条件から絞って検索できます。</p>
 
@@ -178,7 +231,9 @@
 					</div>
 			</section>
 	</article>
-			<img src="images/mapb.gif" height="880" width="770" alt="" usemap=#map>
+	<div id="map">
+		<img src="images/mapb.gif" height="880" width="770" alt="" usemap=#map>
+
 		<map name="map">
 		<area shape="rect" coords="170,70,333,97" href="http://www.belle-co.com/belbeach/" alt="ベルビーチ">
 		<area shape="rect" coords="345,40,510,62" href="http://www.orion-agc.co.jp/" alt="オリオン嵐山ゴルフ倶楽部">
@@ -201,11 +256,12 @@
 		<area shape="rect" coords="24,623,169,647" href="http://miyakojima.net/irabu/golf/golf.html" alt="サシバリンクス伊良部">
 
 		</map>
-
-				<p style="text-align:right;"><a href="index.html" >ページの上に戻る</a></p>
+</div>
+				<p style="text-align:right; margin-right:20px;"><a href="index.html" >ページの上に戻る</a></p>
 	<footer>
 			<p>All contents @copyright 20xx Pacific Golf All rights.</p>
 	</footer>
 
+</div>
 </body>
 </html>
